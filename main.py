@@ -11,7 +11,6 @@ from extractiveSummary import summarize
 app = Flask(__name__)
 
 
-config = pdfkit.configuration(wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
 
 data=[]
 
@@ -111,7 +110,7 @@ def makepdf():
     #     summary=data[0][3],
     #     keyPoints=data[1],
     # )
-    pdf = pdfkit.from_string(data[2], False, configuration=config)
+    pdf = pdfkit.from_string(data[2], False)
     response = make_response(pdf)
     response.headers["Content-Type"] = "application/pdf"
     response.headers["Content-Disposition"] = "inline; filename=output.pdf"
