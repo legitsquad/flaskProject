@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Summarizer </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body class="">
+  <nav class="navbar bg-dark ">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand mb-0 h1 fs-3 ms-3 text-light" href="home.html">Reportify
+      </a>
+      <a class="text-decoration-none"> <span class="navbar-text text-light fs-6 me-3">
+          - Summary reports of youtube videos
+        </span></a>
+      <a class="position-absolute  end-0 mx-4 px-4" href="/pdf" target="_blank"><button id="pdf"
+          class="btn btn-outline-warning btn-lg "> Generate PDF</button></a>
+    </div>
+  </nav>
+  <figure class="mt-5 ms-5 p-3 text-center ">
+    <blockquote class="blockquote ">
+      <p>{{title}}</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      <cite title="Source Title">{{channel}}</cite>
+    </figcaption>
+  </figure>
+
+  <h1 class="display-6 m-4 ms-5">Summary.</h1>
+  <p class="lead text-center ms-5 mx-4">
+    {{summary}}
+  </p>
+
+  <blockquote class=" ms-5 mt-5 display-6">
+    <p>Key Takeaways.</p>
+  </blockquote>
+  <div class="ms-5 p-3 text-danger">
+    {%for sent in keyPoints %}
+    <p class=" text-body-secondary">{{sent}}</p>
+    {%endfor%}
+  </div>
+
+  <h1 class="display-6 ms-5 mt-5">Transcript.</h1>
+  <p class="lead text-center  ms-5 mx-4 lh-base font-monospace ">
+    {{transcript}}
+
+
+  </p>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
