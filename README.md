@@ -1,4 +1,4 @@
-# reportify
+# Reportify
 
 Reportify — YouTube Video-to-Text Report Generator
 
